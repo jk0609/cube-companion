@@ -10,13 +10,13 @@ function CubeList(props) {
   return (
     // Refactor to generate recursively
     <div>
-      <ColorCardList color='W' columnCardList={props.sortedCardList['W']}/>
-      <ColorCardList color='U' columnCardList={props.sortedCardList['U']}/>
-      <ColorCardList color='B' columnCardList={props.sortedCardList['B']}/>
-      <ColorCardList color='R' columnCardList={props.sortedCardList['R']}/>
-      <ColorCardList color='G' columnCardList={props.sortedCardList['G']}/>
-      <ColorCardList color='C' columnCardList={props.sortedCardList['C']}/>
-      <ColorCardList color='MC' columnCardList={props.sortedCardList['MC']}/>
+      <ColorCardList colorClass='WColumn' columnCardList={props.sortedCardList['W']}/>
+      <ColorCardList colorClass='UColumn' columnCardList={props.sortedCardList['U']}/>
+      <ColorCardList colorClass='BColumn' columnCardList={props.sortedCardList['B']}/>
+      <ColorCardList colorClass='RColumn' columnCardList={props.sortedCardList['R']}/>
+      <ColorCardList colorClass='GColumn' columnCardList={props.sortedCardList['G']}/>
+      <ColorCardList colorClass='CColumn' columnCardList={props.sortedCardList['C']}/>
+      <ColorCardList colorClass='MCColumn' columnCardList={props.sortedCardList['MC']}/>
     </div>
   );
 }

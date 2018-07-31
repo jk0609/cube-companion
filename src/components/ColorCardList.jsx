@@ -4,9 +4,11 @@ import './css/ColorCardList.css';
 // Components
 
 function ColorCardList(props) {
+
+// Generate cards recursively
+
   return (
-    <div class='colorColumn'>
-      <h1>{props.color}</h1>
+    <div className={`colorColumn ${ props.colorClass }`}>
       <p>{props.columnCardList[0].name}</p>
     </div>
   );

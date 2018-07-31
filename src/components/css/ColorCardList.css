@@ -1,5 +1,41 @@
 .colorColumn {
   display: inline-block;
   width: 10%;
-  border: 2px solid black;
+  border: 2px solid;
+  margin: 1px;
+}
+
+.WColumn {
+  border-color: #ffee00;
+  background-color: #fff57c;
+}
+
+.UColumn {
+  border-color: #00aeff;
+  background-color: #8de6e9;
+}
+
+.BColumn {
+  border-color: #300050;
+  background-color: #bb55ff;  
+}
+
+.RColumn {
+  border-color: #ff0000;
+  background-color: #ff8b8b;  
+}
+
+.GColumn {
+  border-color: #046900;
+  background-color: #7eff7e; 
+}
+
+.CColumn {
+  border-color: #000000;
+  background-color: #a0a0a0;  
+}
+
+.MCColumn {
+  border-color: #ff00d4;
+  background-color: #fb7aff;  
 }
