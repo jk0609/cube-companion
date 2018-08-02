@@ -7,93 +7,61 @@ import mtg from 'mtgsdk';
 import Header from './components/Header';
 import CubeList from './components/CubeList';
 
+// Models
+import Card from './models/card';
+
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      masterCardList : [
-        {
-          name: "Counterspell",
-          colorIdentity: "U",
-          cost: "UU",
-          get cmc () {
-            return this.cost.length;
-          }
-        },
-        {
-          name: "Remand",
-          colorIdentity: "U",
-          cost: "CU",
-          get cmc () {
-            return this.cost.length;
-          }
-        },
-        {
-          name: "Lightning Bolt",
-          colorIdentity: "R",
-          cost: "R",
-          get cmc () {
-            return this.cost.length;
-          }
-        },
-        {
-          name: "Baneslayer Angel",
-          colorIdentity: "W",
-          cost: "CCCWW",
-          get cmc () {
-            return this.cost.length;
-          }
-        },
-        {
-          name: "Primeval Titan",
-          colorIdentity: "G",
-          cost: "CCCCGG",
-          get cmc () {
-            return this.cost.length;
-          }
-        },
-        {
-          name: "Necropotence",
-          colorIdentity: "B",
-          cost: "BBB",
-          get cmc () {
-            return this.cost.length;
-          }
-        },
-        {
-          name: "Solemn Simulacrum",
-          colorIdentity: "C",
-          cost: "CCCC",
-          get cmc () {
-            return this.cost.length;
-          }
-        },
-        {
-          name: "Azorious Charm",
-          colorIdentity: "UW",
-          cost: "UW",
-          get cmc () {
-            return this.cost.length;
-          }
-        }
-      ]
+      masterCardList : []
     }
+  }
+
+  getCards() {
+    // Temporary, should be DB sourced
+    var unsortedCardList = [
+      'Counterspell',
+      'Lightning Bolt',
+      'Necropotence',
+      'Baneslayer Angel',
+      'Primeval Titan',
+      'Solemn Simulacrum',
+      'Azorious Charm'
+    ]
+
+    unsortedCardList.forEach( cubeCard =>
+      mtg.card.where({ name: cubeCard })
+      .then(cards => {
+          let foundCard = cards[0];
+          this.state.masterCardList.push(
+            new Card(
+              foundCard.name,
+              foundCard.id,
+              foundCard.manaCost,
+              foundCard.colors
+            )
+          );
+      })
+    )
+    
+    console.log(this.state.masterCardList, 'master');
   }
 
   sortCards() {
     let sortedCardList = {
-      'W': [],
-      'U': [],
-      'B': [],
-      'R': [],
-      'G': [],
-      'C': [],
-      'MC': []
+      'White': [],
+      'Blue': [],
+      'Black': [],
+      'Red': [],
+      'Green': [],
+      'Colorless': [],
+      'Multicolor': []
     };
 
     this.state.masterCardList.forEach(function(card){
-      if(sortedCardList.hasOwnProperty(card.colorIdentity)) {
+      if(sortedCardList.hasOwnProperty(card.colors)) {
         sortedCardList[card.colorIdentity].push(card);
       }
       else {
@@ -105,6 +73,8 @@ class App extends Component {
   }
 
   render() {
+    this.getCards();
+
     return (
       <div className='App'>
         <Header/>

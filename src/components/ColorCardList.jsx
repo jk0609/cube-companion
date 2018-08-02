@@ -9,7 +9,6 @@ function ColorCardList(props) {
 
   return (
     <div className={`colorColumn ${ props.colorClass }`}>
-      <p>{props.columnCardList[0].name}</p>
     </div>
   );
 }

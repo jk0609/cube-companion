@@ -1,11 +1,32 @@
 class Card {
   // Eventually update to add all card attributes
-  constructor(name, cost) {
+  constructor(name, id, manaCost, colors) {
     this.name = name;
-    this.cost = cost;
-
-    // Derive from this.cost
-    this.colorIdentity = color;
-    this.cmc = cmc;
+    this.mtgid = id;
+    this.manaCost = manaCost;
+    this.colors = colors;
   }
 }
+
+export default Card;
+// cmc
+// type
+// types
+// subtypes
+// rarity
+// text
+// flavor
+// artist
+// number
+// power
+// toughness
+// reserved
+// rulings
+// printings
+// originalText
+// originalType
+// legalities
+// source
+// imageUrl
+// set
+// id

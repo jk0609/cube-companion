@@ -10,13 +10,13 @@ function CubeList(props) {
   return (
     // Refactor to generate recursively
     <div>
-      <ColorCardList colorClass='WColumn' columnCardList={props.sortedCardList['W']}/>
-      <ColorCardList colorClass='UColumn' columnCardList={props.sortedCardList['U']}/>
-      <ColorCardList colorClass='BColumn' columnCardList={props.sortedCardList['B']}/>
-      <ColorCardList colorClass='RColumn' columnCardList={props.sortedCardList['R']}/>
-      <ColorCardList colorClass='GColumn' columnCardList={props.sortedCardList['G']}/>
-      <ColorCardList colorClass='CColumn' columnCardList={props.sortedCardList['C']}/>
-      <ColorCardList colorClass='MCColumn' columnCardList={props.sortedCardList['MC']}/>
+      <ColorCardList colorClass='WhiteColumn' columnCardList={props.sortedCardList['White']}/>
+      <ColorCardList colorClass='BlueColumn' columnCardList={props.sortedCardList['Blue']}/>
+      <ColorCardList colorClass='BlackColumn' columnCardList={props.sortedCardList['Black']}/>
+      <ColorCardList colorClass='RedColumn' columnCardList={props.sortedCardList['Red']}/>
+      <ColorCardList colorClass='GreenColumn' columnCardList={props.sortedCardList['Green']}/>
+      <ColorCardList colorClass='ColorlessColumn' columnCardList={props.sortedCardList['Colorless']}/>
+      <ColorCardList colorClass='MulticolorColumn' columnCardList={props.sortedCardList['Multicolor']}/>
     </div>
   );
 }
